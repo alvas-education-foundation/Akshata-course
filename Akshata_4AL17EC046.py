@@ -1,12 +1,26 @@
-t=0
-while t<3:
-i1=input("enter the username : ")
-i2=input("enter the password : ")
-if i1=='Micheal' and i2=='e3$WT89x':
-print('Loggedin Successfully')
-break
-else :
-print('Invalid username or password')
-t+=1
-if t==3:
-print("Account Locked")
+import pandas as pd
+from google.colab import files
+uploaded = files.upload()
+import matplotlib.pyplot as plt
+import csv
+
+a=[]
+b=[]
+
+with open('a01_3.csv', 'r') as csvfile:
+plots= csv.reader(csvfile, delimiter=',')
+for row in plots:
+        a.append((row[0]))
+        b.append((row[1]))
+
+
+plt.plot(x,y, marker='o')
+
+plt.title('ECG Signal')
+
+plt.xlabel('Time')
+plt.ylabel('Raw_ECG')
+plt.xlim(500,520)
+plt.ylim(20,400)
+
+plt.show()
